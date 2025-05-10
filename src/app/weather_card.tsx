@@ -1,6 +1,6 @@
 'use client';
 
-import Sunny from '../../public/weather-icons/sunny.svg';
+import Image from 'next/image';
 
 interface WeatherData {
   time: string;
@@ -26,7 +26,12 @@ export default function WeatherCard({ wdata }: { wdata: any }) {
         className='flex-1 rounded overflow-hidden shadow-lg border border-gray-600 snap-start scroll-ml-6'>
         <div className='flex flex-col'>
           <div className='font-bold text-xl mb-2 text-gray-600 p-10'>
-            <Sunny />
+            <Image
+              src={`/weather-icons/sunny.svg`}
+              alt={'Sunny'}
+              width={128}
+              height={128}
+            />
           </div>
           <div className='flex flex-col text-center'>
             <div className='py-2 text-gray-400'>{wdata.time}</div>
